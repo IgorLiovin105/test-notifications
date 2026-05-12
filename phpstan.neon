@@ -1,0 +1,22 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    level: 5
+    paths:
+        - app
+        - tests
+        
+    excludePaths:
+        - tests/Feature/Http/Controllers/*
+        - tests/Unit/ExampleTest.php
+        
+    ignoreErrors:
+        - '#Call to an undefined static method App\\Models\\[a-zA-Z]+::(create|find|where)\(\)#'
+        - '#Call to an undefined static method App\\Models\\User::find\(\)#'
+        
+        - '#Call to protected method increment\(\) of class Illuminate\\Database\\Eloquent\\Model#'
+        
+        - '#Call to method PHPUnit\\Framework\\Assert::assertTrue\(\) with true will always evaluate to true#'
+        
+    reportUnmatchedIgnoredErrors: false
